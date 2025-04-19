@@ -1,3 +1,7 @@
+.home-page{
+  --background: url('../../public/images/wallpaper_background.jpg') no-repeat center center / cover;
+}
+
 .titulo {
   text-align: center;
   font-size: 2rem;
@@ -42,7 +46,11 @@
 }
 
 .searchbar-pequena {
+  background-color: whitesmoke !important;
+  opacity: 0.5;
+  color: black;
   max-width: 250px;
+  border-radius: 20px;
 }
 
 .contenedor-boton {

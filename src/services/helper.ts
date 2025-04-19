@@ -14,6 +14,16 @@ const getAllLibros = async () => {
   }
 };
 
+const getLibroById = async (id: number) => {
+  try {
+    const response = await api.get(`/libros/${id}`);
+    return response.data;
+  } catch (er) {
+    console.error(`Error al obtener el libro con ID ${id}:`, er);
+    return null;
+  }
+};
+
 
 const createLibro = async (libro: any) => {
   try {
@@ -37,6 +47,17 @@ const updateLibro = async (id: number, libroUpdated: any) => {
 };
 
 
+const patchLibro = async (id: number, libroUpdated: any) => {
+  try {
+    const response = await api.patch(`/libros/${id}`, libroUpdated);
+    return response.data;
+  } catch (er) {
+    console.error("Error al editar libro:",er);
+    return null;
+  }
+};
+
+
 const deleteLibro = async (id: number): Promise<boolean> => {
   try {
     const response = await api.delete(`/libros/${id}`);
@@ -51,7 +72,9 @@ const deleteLibro = async (id: number): Promise<boolean> => {
 
 const helper = {
   getAllLibros,
+  getLibroById,
   createLibro,
+  patchLibro,
   updateLibro,
   deleteLibro
 };

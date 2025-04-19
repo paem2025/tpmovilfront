@@ -1,5 +1,5 @@
 .centered-form-page {
-  --background: #121212;
+  background: url('../../public/images/wallpaper_background.jpg') no-repeat center center / cover;
 }
 
 .centered-form-content {

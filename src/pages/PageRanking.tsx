@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Libro } from '../types/Libro';
 import helper from '../services/helper';
-
-const PageRanking = () => {
+import './PageRanking.css';
+const PageRanking: React.FC = () => {
   const [libros, setLibros] = useState<Libro[]>([]);
 
   useEffect(() => {

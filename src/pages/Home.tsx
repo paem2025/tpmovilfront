@@ -13,12 +13,15 @@ import './Home.css';
 import { useEffect, useState } from 'react';
 import helper from '../services/helper';
 import { Libro } from '../types/Libro';
+import { Redirect } from 'react-router';
+import { useHistory } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const [libros, setLibros] = useState<Libro[]>([]);
   const [busqueda, setBusqueda] = useState('');
   const [loading, setLoading] = useState(true);
   const [showToast, setShowToast] = useState(false);
+  const history = useHistory();
 
   useEffect(() => {
     const showData = async () => {
@@ -71,7 +74,7 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen className="ion-padding">
+      <IonContent fullscreen className="ion-padding home-page">
         <IonToast
           isOpen={showToast}
           message="📕 Libro eliminado con éxito"
@@ -107,15 +110,10 @@ const Home: React.FC = () => {
                 <thead className="table-light">
                   <tr>
                     <th>#</th>
-                    <th>Portada</th>
                     <th>Título</th>
                     <th>Autor</th>
                     <th>⭐</th>
-                    <th>Fecha</th>
-                    <th>Editorial</th>
                     <th>Género</th>
-                    <th>Páginas</th>
-                    <th>Idioma</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
@@ -123,25 +121,12 @@ const Home: React.FC = () => {
                   {librosFiltrados.map((libro) => (
                     <tr key={libro.id}>
                       <td>{libro.id}</td>
-                      <td>
-                        <img
-                          src={libro.url_foto}
-                          alt={libro.nombre}
-                          width="60"
-                          height="80"
-                          style={{ objectFit: 'cover' }}
-                        />
-                      </td>
                       <td>{libro.nombre}</td>
                       <td>{libro.autor}</td>
                       <td>{libro.estrellas}</td>
-                      <td>{libro.fecha_publicacion}</td>
-                      <td>{libro.editorial}</td>
                       <td>{libro.genero}</td>
-                      <td>{libro.cant_pag}</td>
-                      <td>{libro.idioma}</td>
                       <td>
-                        <button className="btn btn-sm btn-warning me-1">
+                        <button className="btn btn-sm btn-warning me-1" onClick={() => history.push(`/formulario/${libro.id}`)}>
                           ✏️
                         </button>
                         <button
@@ -169,7 +154,7 @@ const Home: React.FC = () => {
             </div>
 
             <div className="contenedor-boton mt-4 text-center">
-              <IonButton color="tertiary" routerLink="/pageranking">
+              <IonButton color="tertiary" href="/pageranking">
                 ⭐ Ver Ranking Top 5
               </IonButton>
             </div>

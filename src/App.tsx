@@ -47,11 +47,10 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
+          <Route exact path="/home" component={Home} />
           <Route exact path="/pageranking" component={PageRanking} />
           <Route exact path="/formulario" component={Formulario} />
+          <Route exact path="/formulario/:id" component={Formulario} />
           <Route exact path="/">
           <Redirect to="/home" />
         </Route>
@@ -61,4 +60,3 @@ const App: React.FC = () => (
 );
 
 export default App;
-
