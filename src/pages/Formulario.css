@@ -1,0 +1,97 @@
+.centered-form-page {
+  --background: #121212;
+}
+
+.centered-form-content {
+  --background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form-container {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-title {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-label {
+  color: #bbbbbb;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.form-input {
+  --background: #2d2d2d;
+  --color: #ffffff;
+  --placeholder-color: #666;
+  --padding-start: 15px;
+  --padding-end: 15px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.star {
+  color: #555;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.star.active {
+  color: gold;
+}
+
+.submit-btn {
+  --background: #3a7bd5;
+  --background-activated: #2c65b3;
+  --background-hover: #2c65b3;
+  --color: white;
+  margin-top: 25px;
+  font-weight: 600;
+  --border-radius: 8px;
+  height: 50px;
+}
+
+/* Date picker styling */
+ion-popover {
+  --width: 300px;
+}
+
+/* Required field indicator */
+.form-label::after {
+  content: " *";
+  color: #ff4444;
+  opacity: 0.8;
+}

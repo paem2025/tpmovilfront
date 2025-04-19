@@ -1,0 +1,7 @@
+{
+  "name": "dmbs_catalogo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
